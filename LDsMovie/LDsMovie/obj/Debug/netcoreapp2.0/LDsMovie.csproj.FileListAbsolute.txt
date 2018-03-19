@@ -1,0 +1,11 @@
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\bin\Debug\netcoreapp2.0\LDsMovie.deps.json
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\bin\Debug\netcoreapp2.0\LDsMovie.runtimeconfig.json
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\bin\Debug\netcoreapp2.0\LDsMovie.runtimeconfig.dev.json
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\bin\Debug\netcoreapp2.0\LDsMovie.dll
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\bin\Debug\netcoreapp2.0\LDsMovie.pdb
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\obj\Debug\netcoreapp2.0\LDsMovie.csprojResolveAssemblyReference.cache
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\obj\Debug\netcoreapp2.0\LDsMovie.csproj.CoreCompileInputs.cache
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\obj\Debug\netcoreapp2.0\LDsMovie.AssemblyInfoInputs.cache
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\obj\Debug\netcoreapp2.0\LDsMovie.AssemblyInfo.cs
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\obj\Debug\netcoreapp2.0\LDsMovie.dll
+C:\Users\Makram\source\repos\LDsMovie\LDsMovie\obj\Debug\netcoreapp2.0\LDsMovie.pdb
