@@ -18,25 +18,31 @@ namespace LDsMovie.Controllers
             _context = context;
         }
 
-        // GET: Movies
-        public async Task<IActionResult> Index(string search)
+        public async Task<IActionResult> Index(string SearchGenre, string searchTitle)
         {
+            // Use LINQ to get list of genres.
+            IQueryable<string> gQuery = from mg in _context.Movie
+                                            orderby mg.Genre
+                                            select mg.Genre;
+
             var movies = from m in _context.Movie
                          select m;
 
-            if (!String.IsNullOrEmpty(search))
+            if (!String.IsNullOrEmpty(searchTitle))
             {
-               
-                //movies = movies.Where(s => s.Genre.Contains(search));
-                
-               
-                movies = movies.Where(s => s.Title.Contains(search));
-                    
+                movies = movies.Where(s => s.Title.Contains(searchTitle));
             }
 
-            return View(await movies.ToListAsync());
+            if (!String.IsNullOrEmpty(SearchGenre))
+            {
+                movies = movies.Where(x => x.Genre == SearchGenre);
+            }
 
+            var movieGVM = new MovieGenre();
+            movieGVM.Genres = new SelectList(await gQuery.Distinct().ToListAsync());
+            movieGVM.Movies = await movies.ToListAsync();
 
+            return View(movieGVM);
         }
 
         // GET: Movies/Details/5

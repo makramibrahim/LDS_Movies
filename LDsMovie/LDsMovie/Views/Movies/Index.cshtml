@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LDsMovie.Models.Movie>
+﻿@model LDsMovie.Models.MovieGenre
 
 @{
     ViewData["Title"] = "Index";
@@ -6,26 +6,31 @@
 
 <h2>Movie List</h2>
 
-<form class="form-inline my-2 my-lg-3" asp-controller="Movies" asp-action="Index">
-    <input class="form-control mr-sm-2" name="search" placeholder="Search">
+<form class="form-inline my-2" asp-controller="Movies" asp-action="Index">
+
+    <select class="form-control mr-sm-1" asp-for="SearchGenre" asp-items="Model.Genres">
+        <option value="">All</option>
+    </select>
+
+    <input class="form-control mr-sm-1" type="text" name="searchTitle" placeholder="Search">
     <button class="btn btn-secondary my-2 my-sm-0" value="Filter" type="submit">Search</button>
-</form>
+</form><hr />
 
 <table class="table table-hover table-bordered table-info">
     <thead>
         <tr>
             <th scope="col">
 
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Movies[0].Title)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.ReleaseDate)
+                @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.Genre)
+                @Html.DisplayNameFor(model => model.Movies[0].Genre)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Movies[0].Price)
             </th>
 
             <th scope="col">
@@ -34,7 +39,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Movies)
         {
             <tr class="table table-bordered table-success">
                 <td scope="row">
@@ -47,7 +52,7 @@
                     @Html.DisplayFor(modelItem => item.Genre)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                   @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
@@ -58,7 +63,6 @@
         }
     </tbody>
 </table>
-
-<a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Back</a>
 <a class="btn-success btn" asp-action="Create">Create New</a>
+<a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Back</a>
 
